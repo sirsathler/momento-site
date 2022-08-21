@@ -1,0 +1,25 @@
+/* GLOBAL VARIABLES */
+$primary: #DD247B;
+$on-primary: #fff;
+
+$secondary: #515BD4;
+$on-secondary: #fff;
+
+$background: #fff;
+$on-background: #000000;
+
+$surface: #A1A1A1;
+
+
+:export {
+    primary: $primary;
+    on-primary: $on-primary;
+    
+    secondary: $secondary;
+    on-secondary: $on-secondary;
+    
+    background: $background;
+    on-background: $on-background;
+    
+    surface: $surface;
+}

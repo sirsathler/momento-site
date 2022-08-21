@@ -1,0 +1,48 @@
+@import "../../../global/variables.scss";
+@import "../../../global/global-classes.scss";
+@import "../animations.scss";
+
+
+.login-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    
+}
+
+.l-form-container {
+    opacity: 0;
+    animation: showForm 1s forwards linear;
+    animation-delay: 2.6s;
+
+    position: absolute;
+    transform: translateY(32%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    background-color: $background;
+    box-shadow: 0px 0px 4px #aeaeae;
+    
+    border-radius: 22px;
+    width: 280px;
+    padding: 28px;
+
+    
+    &__text {
+        margin-top: 22px;
+        width: 100%;
+        text-align: center;
+    }
+
+    &__button {
+        width: 40%;
+    }
+    &__title {  
+        margin: 22px;
+        font-size: 26px;
+        text-align: center;
+        color: $primary;
+    }
+}
