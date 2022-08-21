@@ -87,6 +87,11 @@ table {
     height: 100%;
 }
 
+.generic-container {
+	max-width: 800px;
+	margin: 0 auto;
+}
+
 .d-gradient {
 	background: linear-gradient(-45deg, $secondary, $primary);
 	
