@@ -1,8 +1,13 @@
 import './App.scss';
+
 import Login from './pages/login/login';
 import Feed from './pages/feed/feed';
+import Profile from './pages/profile/profile';
+
 import Flavor from './global/variables.scss';
 import TopBar from './global/components/top-bar/top-bar';
+
+
 
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
@@ -19,7 +24,7 @@ function App() {
     <ThemeProvider theme={theme}>
       <div className="App">
         <TopBar/>
-        <Feed />
+        <Profile />
       </div>
     </ThemeProvider>
   );
