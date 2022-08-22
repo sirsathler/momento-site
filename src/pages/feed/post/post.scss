@@ -18,14 +18,18 @@
         display: flex;
         align-items: center;
         justify-content: center;
+
         &__like-button {
             margin-top: 24px;
             cursor: pointer;
             color: #fff;
             fill: none;
             stroke: $primary;
-            stroke-width: 0.5px;
+            stroke-width: 1px;
             stroke-linejoin: round;
+            &:hover{
+                fill: $primary;
+            }
         }
     }
 
