@@ -1,28 +1,22 @@
-const { axios } = require("axios")
-require('dotenv').config()
+const axios = require("axios")
 
 
 exports.getProfileInfo = async (username) => {
-    console.log(process.env)
-    return {
-        "_id": "6303b7bc4231da25c0d14577",
-        "username": "sirsathler",
-        "password": "batata",
-        "name": "Matheus",
-        "surname": "Sathler",
-        "profilepic": "https://imgur.com/ax98YzW.png",
-        "profilecover": "https://imgur.com/qb2S2mU.png",
-        "collage": [
-            "https://imgur.com/bOD58pE.png",
-            "https://imgur.com/6aMb5b9.png",
-            "https://imgur.com/6aMb5b9.png",
-            "https://imgur.com/6aMb5b9.png",
-            "https://imgur.com/6aMb5b9.png"
-        ],
-        "bio": "O seu momento!",
-        "followers": [],
-        "momentos": [],
-        "__v": 0
+    // console.log(process.env.REACT_APP_DEFAULT_API_PORT)
+    const url = process.env.REACT_APP_DEFAULT_API_URL
+    const port = process.env.REACT_APP_DEFAULT_API_PORT
+    const endpoint = `${url}${port}/profile?username=${username}`
 
+    console.log(endpoint)
+
+    try{
+        const response = await axios.get(endpoint).catch()
+        return response.data.user[0]
     }
+    catch(err){
+        console.log(err)
+        return null
+    }
+
+    return null
 }

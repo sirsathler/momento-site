@@ -1,0 +1,24 @@
+@import '../../../../global/variables.scss';
+
+.user-profile-stats-container {
+    display: flex;
+    max-width: 800px;
+    justify-content: space-between;
+    .user-profile-stats-wrapper {
+        text-align: center;
+        margin: 40px 80px;
+        &__value,
+        &__label {
+            font-family: "forte";
+        }
+
+        &__value {
+            font-size: 32px;
+            color: $primary;
+        }
+        &__label {
+            font-size: 26px;
+            color: $surface;
+        }
+    }
+}
