@@ -1,7 +1,7 @@
 import CSS from './login.scss'
 import loginlogo from '../../assets/images/loginlogo.png'
 
-import LoginForm from './login-form/login-form'
+import LoginForm from './login-form/loginForm'
 
 export default function Login() {
     return (
