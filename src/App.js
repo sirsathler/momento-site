@@ -10,10 +10,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes, useParams } from "react-router-dom"
 import ProtectedRoute from './global/components/protectedroute/ProtectedRoute';
 
-import { AuthProvider, AuthContext } from './global/contexts/Auth';
-import { useContext } from 'react';
-
-
+import { AuthProvider } from './global/contexts/Auth';
 
 const theme = createTheme({
   palette: {
@@ -22,8 +19,6 @@ const theme = createTheme({
     },
   }
 })
-
-
 
 function App() {
   return (

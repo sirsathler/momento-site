@@ -17,22 +17,24 @@ export const AuthProvider = ({ children }) => {
         if (loggedUser && loggedToken) {
             setUser(JSON.parse(loggedUser))
             setToken(JSON.parse(loggedToken))
-            API.defaults.headers.Authorization = `Bearer ${token}`
+            API.defaults.headers.Authorization = `Bearer ${loggedToken}`
         }
 
         setLoading(false)
     }, [])
 
     async function handleLogin(credentials) {      
+        console.log(API.defaults.headers)
         const response = await submitLoginCredentials(credentials)
         if (response.status == 200) {
             const user = response.data.user
             const token = response.data.token
-
+            
             setUser(user)
             setToken(token)
             localStorage.setItem('user', JSON.stringify(user))
             localStorage.setItem('token', JSON.stringify(token))
+            console.log(API.defaults.headers)
             return true
         }
     }
