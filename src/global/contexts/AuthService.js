@@ -4,7 +4,7 @@ import { API, PostAPIEndpoint } from '../services/api';
 
 const submitLoginCredentials = async (payload) => {
     try{
-        const response = PostAPIEndpoint("/login", payload)
+        const response = await PostAPIEndpoint("/login", payload)
         console.log(response)
         return response
     }

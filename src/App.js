@@ -10,8 +10,10 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 import { BrowserRouter as Router, Route, Routes, useParams } from "react-router-dom"
 import ProtectedRoute from './global/components/protectedroute/ProtectedRoute';
 
-import { AuthContext } from './global/contexts/AuthProvider';
+import { AuthProvider, AuthContext } from './global/contexts/Auth';
 import { useContext } from 'react';
+
+
 
 const theme = createTheme({
   palette: {
@@ -24,17 +26,6 @@ const theme = createTheme({
 
 
 function App() {
-  const AuthProvider = useContext(AuthContext)
-
-
-  // if(AuthProvider.loading) {
-  //   return (
-  //     <>
-  //       <h1>Carregando...</h1>
-  //     </>
-  //   )
-  // }
-
   return (
     <ThemeProvider theme={theme}>
       <AuthProvider>

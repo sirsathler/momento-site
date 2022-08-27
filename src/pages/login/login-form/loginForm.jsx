@@ -4,13 +4,13 @@ import { useState } from 'react';
 import { TextField, Button } from '@mui/material'
 
 import { useContext } from 'react';
-import { AuthContext } from '../../../global/contexts/AuthProvider'
+import { AuthContext } from '../../../global/contexts/Auth'
 import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
     const [username, setUsername] = useState('');
     const [pass, setPass] = useState('');
-    const authContext = useContext(AuthContext)
+    const {handleLogin, user} = useContext(AuthContext)
 
     const Navigate = useNavigate()
 
@@ -22,21 +22,10 @@ export default function Login() {
             password: pass
         }
 
-        if (authContext.handleLogin(userCredentials)) {
+        const login = await handleLogin(userCredentials)
+        if (login) {
             Navigate('/')
         }
-        
-        // const response = await submitLoginCredentials()
-
-        // if (response.status == 200) {
-        //     console.log("logged!")
-        //     authContext.setUser(true)
-        //     console.log(response)
-        //     localStorage.setItem('userToken', JSON.stringify(response.data))
-        //     console.log(authContext.user)
-        //     Navigate('/')
-        // }
-        // console.log(authContext.isAuth)
     }
 
     return (
