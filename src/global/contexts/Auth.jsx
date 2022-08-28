@@ -23,20 +23,25 @@ export const AuthProvider = ({ children }) => {
         setLoading(false)
     }, [])
 
-    async function handleLogin(credentials) {      
-        console.log(API.defaults.headers)
+    async function handleLogin(credentials) {
         const response = await submitLoginCredentials(credentials)
         if (response.status == 200) {
             const user = response.data.user
             const token = response.data.token
-            
             setUser(user)
             setToken(token)
             localStorage.setItem('user', JSON.stringify(user))
             localStorage.setItem('token', JSON.stringify(token))
-            console.log(API.defaults.headers)
             return true
         }
+    }
+
+    async function handleLogout() {
+        setUser()
+        setToken()
+        localStorage.removeItem('user')
+        localStorage.removeItem('token')
+        return true
     }
 
     return (
