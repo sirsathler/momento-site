@@ -1,22 +1,19 @@
 import axios from "axios";
-import { useNavigate } from 'react-router-dom';
 
 
 const APIBaseURL = process.env.REACT_APP_DEFAULT_API_URL
 const APIBasePORT = process.env.REACT_APP_DEFAULT_API_PORT
 
 
-
 export const API = axios.create({
     baseURL: `${APIBaseURL}${APIBasePORT}`
 })
 
-API.interceptors.response.use(response => response, error => {
-    const Navigate = useNavigate()
+axios.interceptors.response.use(response => response, error => {
 
     switch(error.response.status){
         case 403 || 401:
-            <Navigate to="/login"/>
+            
     }
 })
 

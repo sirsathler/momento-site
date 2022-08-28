@@ -11,6 +11,7 @@ import { BrowserRouter as Router, Route, Routes, useParams } from "react-router-
 import ProtectedRoute from './global/components/protectedroute/ProtectedRoute';
 
 import { AuthProvider } from './global/contexts/Auth';
+import TopBar from './global/components/top-bar/top-bar';
 
 const theme = createTheme({
   palette: {
@@ -26,6 +27,7 @@ function App() {
       <AuthProvider>
         <Router>
           <div className="App">
+            <TopBar/>
             <Routes>
 
               <Route path="/" exact element={<ProtectedRoute>
