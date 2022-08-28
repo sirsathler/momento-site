@@ -7,11 +7,12 @@ import Profile from './pages/profile/profile';
 import Flavor from './global/variables.scss';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-import { BrowserRouter as Router, Route, Routes, useParams } from "react-router-dom"
+import { BrowserRouter as Router, Route, Routes, useParams, useNavigate } from "react-router-dom"
 import ProtectedRoute from './global/components/protectedroute/ProtectedRoute';
 
 import { AuthProvider } from './global/contexts/Auth';
 import TopBar from './global/components/top-bar/top-bar';
+import SetupInterceptors, { NavigateFunctionComponent } from './global/services/Interceptors/SetupInterceptors';
 
 const theme = createTheme({
   palette: {
@@ -21,13 +22,16 @@ const theme = createTheme({
   }
 })
 
+
+
 function App() {
   return (
     <ThemeProvider theme={theme}>
       <AuthProvider>
         <Router>
+          <NavigateFunctionComponent />
           <div className="App">
-            <TopBar/>
+            <TopBar />
             <Routes>
 
               <Route path="/" exact element={<ProtectedRoute>

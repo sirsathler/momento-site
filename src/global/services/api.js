@@ -9,14 +9,6 @@ export const API = axios.create({
     baseURL: `${APIBaseURL}${APIBasePORT}`
 })
 
-axios.interceptors.response.use(response => response, error => {
-
-    switch(error.response.status){
-        case 403 || 401:
-            
-    }
-})
-
 export const PostAPIEndpoint = async (route, payload) => {
     const response = API.post(route, payload)
     return response
