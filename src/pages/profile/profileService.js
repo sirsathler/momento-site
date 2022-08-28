@@ -17,6 +17,4 @@ exports.getProfileInfo = async (username) => {
         console.log(err)
         return null
     }
-
-    return null
 }

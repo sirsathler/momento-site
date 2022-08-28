@@ -4,7 +4,9 @@ import LikeButton from '@mui/icons-material/Favorite';
 // import postImg from ''
 
 
-export default function Post() {
+export default function Post(props) {
+    const post = props.post
+    console.log(post)
     return (
         <div className="post-container">
             <div className="post-header-container">
@@ -12,7 +14,7 @@ export default function Post() {
                     <img className="user-image-container__image" src="" alt="" />
                 </div>
                 <div className="post-user-info">
-                    <p className='post-user-info__username forte-font'>@dougcastelano</p>
+                    <p className='post-user-info__username forte-font'>{post.user.username}</p>
                     <p className='post-user-info__timeleft forte-font'>12 minutos restantes</p>
                 </div>
             </div>
